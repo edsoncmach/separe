@@ -1,0 +1,37 @@
+header {
+    background-color: #FFF;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 24px;
+
+    & .header-logo {
+        display: flex;
+
+        & img {
+            width: 48px;
+        }
+
+        & span {
+            font-weight: 700;
+            font-size: 48px;
+            color: #009656;
+            letter-spacing: 4px;
+        }
+    }
+
+    & .header-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 48px;
+
+        & .login {
+            border: solid 2px #967C78;
+            border-radius: 8px;
+            padding: 12px 24px;
+        }
+    }
+}

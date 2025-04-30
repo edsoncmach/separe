@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    <title>Se | Pa | Re</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-logo">
+                <img src="./assets/img/recycle-slogo.svg" alt="">
+                <span>SEPARE</span>
+            </div>
+            
+            <div class="header-buttons">
+                <a href="./register.html">Cadastrar</a>
+                <a class="login" href="./login.html">Entrar</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Dê uma nova vida às coisas</h1>
+            <p>Encontre itens que outras pessoas estão disponibilizando para reutilização</p>
+            <div class="search">
+                <form action="">
+                    <input type="text" name="" id="">
+                    <select name="" id="">
+                        <option value="">Categoria</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">Bairro</option>
+                    </select>
+                    <button type="submit">Procurar</button>
+                </form>
+            </div>
+            <div class="hero-buttons">
+                <button>Retirar sem pagar</button>
+                <button>Retirar com oferta</button>
+                <button>Retirar e descartar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cards">
+        <div id="modal">
+            <div class="box-modal">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Tijolo 8 furos</h4>
+                <span class="tag-card">Alvenaria</span>
+                <span class="city">Portão</span>
+                <p>São 600 tijolos que sobraram da obra da minha churrasqueira. Tenho pressa para retirada e pode levar de graça.</p>
+                <div class="modal-offer-user">
+                    <h4>Usuário: </h4>
+                    <span>edson@gmail.com</span>
+                </div>
+                <div class="modal-offer-qtd">
+                    <h4>Quantidade: </h4>
+                    <span>600</span>
+                </div>
+                <div class="modal-offer-value">
+                    <h4>Valor R$: </h4>
+                    <span>150,00</span>
+                </div>
+                <button class="btn-modal-close">Fechar</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Tijolo 8 furos</h4>
+                <span class="tag-card">Alvenaria</span>
+                <span class="city">Portão</span>
+                <button class="btn-modal">Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/porcelanato-42x42.png" alt="">
+                <h4>Porcelanato 42x42</h4>
+                <span class="tag-card">Revestimento</span>
+                <span class="city">Rio Ranco</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/fibrocimento-6mm.jpg" alt="">
+                <h4>Telha de Fibrocimento 6mm</h4>
+                <span class="tag-card">Alvenaria</span>
+                <span class="city">Curitiba</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/areia-lavada.jpeg" alt="">
+                <h4>Areia lavada 1 metro</h4>
+                <span class="tag-card">Alvenaria</span>
+                <span class="city">Piraquara</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Porcelanato 42x42</h4>
+                <span class="tag-card">revestimento</span>
+                <span class="city">Rio de Janeiro</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Tijolos 8 furos</h4>
+                <span class="tag-card">Alvenaria</span>
+                <span class="city">Curitiba</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Telhas Fibrocimento</h4>
+                <span class="tag-card">Telhado</span>
+                <span class="city">São Paulo</span>
+                <button>Ver Detalhes</button>
+            </div>
+            <div class="card">
+                <img src="./assets/img/tijolo_8_furos.webp" alt="">
+                <h4>Porcelanato 42x42</h4>
+                <span class="tag-card">revestimento</span>
+                <span class="city">Rio de Janeiro</span>
+                <button>Ver Detalhes</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; Todos os direitos reservados!
+    </footer>
+    <script>
+        const modal = document.querySelector("#modal")
+        const btnModal = document.querySelector(".btn-modal")
+        const btnModalClose = document.querySelector(".btn-modal-close")
+
+        btnModal.addEventListener('click', () => {
+            modal.style.display = 'flex'
+        })
+
+        btnModalClose.addEventListener('click', () => {
+            modal.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
