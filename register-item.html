@@ -3,58 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar item</title>
-    <link rel="stylesheet" href="./assets/css/register/style.css">
-    <link rel="stylesheet" href="./assets/css/register/register-item.css">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-logo">
-                <img src="./assets/img/recycle-slogo.svg" alt="">
-                <span>SEPARE</span>
+    <div>
+        <header class="container-fluid bg-white shadow-sm mb-5">
+        <div class="container p-3">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img class="logo-separe" src="./assets/img/recycle-slogo.svg" alt="">
+                    <span class="text-success fs-1 text-uppercase fw-bold">Separe</span>
+                </a>
+                <ul class="d-flex nav justify-content-between align-items-center gap-5">
+                    <li>
+                        <a href="./itens.html" class="nav-link text-dark fs-5">
+                            Voltar
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <a href="./profile.html">Voltar</a>
+        </div>
         </header>
-        <h1>Cadastrar item</h1>
-        <form action="">
-            <div class="input-form">
-                <label for="">Nome do item</label>
-                <input type="text" name="" id="" placeholder="Ex.: Tijolo ecológico">
+        <div class="login-screen d-flex justify-content-center align-items-center w-50 mx-auto">
+            <div class="screen-left bg-success p-5 rounded-start-3">
+                <a href="/" class="d-flex gap-2 justify-content-center align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none h-100">
+                    <img class="logo-separe" src="./assets/img/recycle-slogo-white.svg" alt="">
+                    <span class="text-success fs-1 text-uppercase fw-bold text-white">Separe</span>
+                </a>
+                <p class="text-white mt-3">A reciclagem e o descarte correto de resíduos são práticas essenciais para um futuro mais sustentável e para a preservação do meio ambiente. Separar o lixo em reciclável e não reciclável, além de limpar as embalagens antes do descarte, contribui para a coleta seletiva, a redução de lixo em aterros e a preservação dos recursos naturais. </p>
             </div>
-            <div class="input-form">
-                <label for="">Categoria</label>
-                <select name="" id="">
-                    <option value="">Selecione uma categoria...</option>
-                    <option value="">Alvenaria</option>
-                    <option value="">Telhado</option>
-                    <option value="">Revestimento</option>
-                </select>
+            <div class="screen-right d-flex flex-column p-5 rounded-end-3 gap-2">
+                <h1 class="fs-5 mb-2">Cadastro de Item</h1>
+                <div id="msg-error" class="fs-6 text-success"></div>
+                <form id="form-register" action="" class="d-flex flex-column gap-2">
+                    <div class="input-form d-flex flex-column">
+                        <label for="" class="text-register fw-semibold">Nome do item</label>
+                        <input class="form-control form-control-sm" type="text" name="name" id="name" required>
+                    </div>
+                    <div class="input-form d-flex flex-column fw-semibold">
+                        <label for="" class="text-register">Categoria</label>
+                        <select class="form-select" name="category" id="category" aria-label="Default select example">
+                            <option selected>Selecione uma categoria...</option>
+                            <option value="1">Revestimento</option>
+                            <option value="2">Telhado</option>
+                            <option value="3">Alvenaria</option>
+                        </select>
+                    </div>
+                    <div class="input-form d-flex flex-column fw-semibold">
+                        <label for="" class="text-register">Cidade</label>
+                        <select class="form-select" name="city" id="city" aria-label="Default select example">
+                            <option selected>Selecione uma cidade...</option>
+                            <option value="1">Curitiba</option>
+                            <option value="2">Pinhais</option>
+                            <option value="3">Piraquara</option>
+                        </select>
+                    </div>
+                    <div class="input-form d-flex flex-column">
+                        <label for="" class="text-register fw-semibold">Valor</label>
+                        <input class="form-control form-control-sm" type="text" name="value" id="value" required>
+                    </div>
+                    <div  class="input-form d-flex flex-column fw-semibold">
+                        <label for="">Descrição</label>
+                        <textarea class="form-control" name="description" id="description"></textarea>
+                    </div>
+                    <div class="input-form d-flex flex-column">
+                        <label for="" class="text-register fw-semibold">Fotos do item</label>
+                        <input class="form-control form-control-sm" type="file" name="img-item" id="img-item" required>
+                    </div>
+                    <button class="btn btn-sm btn-success" type="submit">Cadastrar</button>
+                </form>
             </div>
-            <div class="input-form">
-                <label for="">Cidade</label>
-                <select name="" id="">
-                    <option value="">Selecione uma cidade...</option>
-                    <option value="">Curitiba</option>
-                    <option value="">Pinhais</option>
-                    <option value="">Piraquara</option>
-                    <option value="">São José dos Pinhais</option>
-                </select>
-            </div>
-            <div class="input-form">
-                <label for="">Quantidade</label>
-                <input type="text" name="" id="">
-            </div>
-            <div class="input-form">
-                <label for="">Foto</label>
-                <input type="file" name="" id="">
-            </div>
-            <div class="input-form">
-                <label for="">Descrição</label>
-                <textarea name="" id="" rows="8" cols="8"></textarea>
-            </div>
-            <button type="submit"><a href="./profile.html">Cadastrar</a></button>
-        </form>
+        </div>
     </div>
+    <script src="./assets/css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="./assets/js/register-item.js"></script>
 </body>
 </html>

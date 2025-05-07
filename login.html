@@ -4,33 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
-    <link rel="stylesheet" href="./assets/css/register/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-logo">
-                <img src="./assets/img/recycle-slogo.svg" alt="">
-                <span>SEPARE</span>
+    <div>
+        <header class="container-fluid bg-white shadow-sm mb-5">
+        <div class="container p-3">
+            <div class="d-flex align-items-center justify-content-center">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img class="logo-separe" src="./assets/img/recycle-slogo.svg" alt="">
+                    <span class="text-success fs-1 text-uppercase fw-bold">Separe</span>
+                </a>
+                <ul class="d-flex nav justify-content-between align-items-center gap-5">
+                    <li>
+                        <a href="./index.html" class="nav-link text-dark fs-5">
+                            Voltar
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <a href="./index.html">Voltar</a>
+        </div>
         </header>
-        <h1>Acesso ao sistema</h1>
-        <form action="">
-            <div class="input-form">
-                <label for="">E-mail</label>
-                <input type="text" name="" id="" placeholder="Ex.: marial@email.com">
+        <div class="login-screen d-flex justify-content-center align-items-center w-50 mx-auto">
+            <div class="screen-left bg-success p-5 rounded-start-3">
+                <a href="/" class="d-flex gap-2 justify-content-center align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none h-100">
+                    <img class="logo-separe" src="./assets/img/recycle-slogo-white.svg" alt="">
+                    <span class="text-success fs-1 text-uppercase fw-bold text-white">Separe</span>
+                </a>
+                <p class="text-white mt-3">A reciclagem e o descarte correto de resíduos são práticas essenciais para um futuro mais sustentável e para a preservação do meio ambiente. Separar o lixo em reciclável e não reciclável, além de limpar as embalagens antes do descarte, contribui para a coleta seletiva, a redução de lixo em aterros e a preservação dos recursos naturais. </p>
             </div>
-            <div class="input-form">
-                <label for="">Senha</label>
-                <input type="password" name="" id="" placeholder="****">
+            <div class="screen-right d-flex flex-column p-5 rounded-end-3 gap-2">
+                <h1 class="fs-5 mb-2">Entrar</h1>
+                <form id="form-login" action="" class="d-flex flex-column gap-2">
+                    <div class="input-form d-flex flex-column fw-semibold">
+                        <label for="email" class="text-register">E-mail</label>
+                        <input class="form-control form-control-sm" type="email" name="email" id="email" placeholder="Ex.: marial@email.com">
+                    </div>
+                    <div class="input-form d-flex flex-column fw-semibold">
+                        <label for="pass" class="text-register">Senha</label>
+                        <input class="form-control form-control-sm" type="password" name="pass" id="pass" placeholder="****">
+                    </div>
+                    <div id="msg-error" class="fs-6 text-danger"></div>
+                    <button class="btn btn-sm btn-success mt-5" id="btn-logar">Entrar</button>
+                    <p class="text-register">Ainda não tem uma conta? <a href="./register.html">Registre-se</a></p>
+                </form>
             </div>
-            <div class="input-form">
-                <label for="">Confirmar senha</label>
-                <input type="password" name="" id="" placeholder="****">
-            </div>
-            <button type="submit"><a href="./profile.html">Entrar</a></button>
-        </form>
+        </div>
     </div>
+    <script src="./assets/css/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="./assets/js/login.js"></script>
 </body>
 </html>

@@ -3,133 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
     <title>Se | Pa | Re</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/profile/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-logo">
-                <img src="./assets/img/recycle-slogo.svg" alt="">
-                <span>SEPARE</span>
-            </div>
-            <div class="header-buttons">
-                <a href="./register-item.html">Cadastrar item</a>
-                <a href="./itens.html">Meus itens</a>
-                <a href="./my-offers.html">Minhas ofertas</a>
-                <a href="./index.html">Sair</a>
+<body class="bg-body-tertiary">
+    <header class="container-fluid bg-white">
+        <div class="px-3 py-2 bg-white container">
+            <div class="d-flex align-items-center justify-content-center">
+                    <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <img class="logo-separe" src="./assets/img/recycle-slogo.svg" alt="">
+                        <span class="text-success fs-1 text-uppercase fw-bold">Separe</span>
+                    </a>
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="./profile.html" class="nav-link text-dark">Home</a>
+                        </li>
+                        <li>
+                            <a href="/itens.html" class="nav-link text-dark">Meus itens</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-dark">Minhas ofertas</a>
+                        </li>
+                        <li class="d-flex">
+                            <span id="name-user" class="nav-link text-dark"></span>
+                            <button class="btn btn-sm" onclick="sair()">
+                                <img src="./assets/img/icons/logout.png" alt="" width="16px">
+                            </button>
+                        </li>
+                    </ul>
             </div>
         </div>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <h1>Dê uma nova vida às coisas</h1>
-            <p>Encontre itens que outras pessoas estão disponibilizando para reutilização</p>
-            <div class="search">
-                <form action="">
-                    <input type="text" name="" id="">
-                    <select name="" id="">
+    <section class="container-fluid bg-success py-5" id="hero">
+        <div class="container d-flex flex-column align-items-center gap-3">
+            <h1 class="h1-hero text-white fw-bold">Dê uma nova vida às coisas</h1>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-2"></div>
+                <p class="text-white fs-4 col-8 text-center">Encontre itens que outras pessoas estão disponibilizando para reutilização</p>
+                <div class="col-2"></div>
+            </div>
+            <div class="container bg-white rounded-3 p-3 mb-3">
+                <form action="" class="d-flex gap-5">
+                    <input class="form-control" type="text" name="" id="">
+                    <select class="form-select" name="" id="">
                         <option value="">Categoria</option>
                     </select>
-                    <select name="" id="">
+                    <select class="form-select" name="" id="">
                         <option value="">Bairro</option>
                     </select>
-                    <button type="submit">Procurar</button>
+                    <button class="btn btn-success px-5" type="submit">Procurar</button>
                 </form>
             </div>
             <div class="hero-buttons">
-                <button>Retirar sem pagar</button>
-                <button>Retirar com oferta</button>
-                <button>Retirar e descartar</button>
+                <button class="btn btn-light btn-lg px-5">Retirar sem pagar</button>
+                <button class="btn btn-light btn-lg px-5">Retirar com oferta</button>
+                <button class="btn btn-light btn-lg px-5">Retirar e descartar</button>
             </div>
         </div>
     </section>
 
-    <section id="cards">
-        <div id="modal">
-            <div class="box-modal">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Tijolo 8 furos</h4>
-                <span class="tag-card">Alvenaria</span>
-                <span class="city">Portão</span>
-                <p>São 600 tijolos que sobraram da obra da minha churrasqueira. Tenho pressa para retirada e pode levar de graça.</p>
-                <div class="modal-offer-user">
-                    <h4>Usuário: </h4>
-                    <span>edson@gmail.com</span>
+    <section id="itens">
+        <div class="container d-flex gap-4 py-5">
+            <form class="col-2 bg-white border rounded p-4 h-100">
+                <span class="fw-bold">Filtros</span>
+                <div class="filters mt-3">
+                    <span class="fw-bold" style="font-size: .8rem;">Categorias</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" style="font-size: .8rem;" for="checkDefault">
+                            Revestimento
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" style="font-size: .8rem;" for="checkDefault">
+                            Alvenaria
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" style="font-size: .8rem;" for="checkDefault">
+                            Telhado
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" style="font-size: .8rem;" for="checkDefault">
+                            Madeiras
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                        <label class="form-check-label" style="font-size: .8rem;" for="checkDefault">
+                            Ferragem
+                        </label>
+                    </div>
                 </div>
-                <div class="modal-offer-qtd">
-                    <h4>Quantidade: </h4>
-                    <span>600</span>
+                <div class="cities">
+                    <span class="fw-bold" style="font-size: .8rem;">Cidades</span>
+                    <select class="form-select">
+                        <option style="font-size: .8rem;" value="1">Selecione...</option>
+                        <option style="font-size: .8rem;" value="1">Curitiba</option>
+                        <option style="font-size: .8rem;" value="2">Bigorrilho</option>
+                        <option style="font-size: .8rem;" value="3">Portão</option>
+                    </select> 
                 </div>
-                <div class="modal-offer-value">
-                    <h4>Valor R$: </h4>
-                    <span>150,00</span>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-success px-5 btn-sm mt-3" type="submit">Filtrar</button>
                 </div>
-                <button class="btn-modal-close">Fechar</button>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Tijolo 8 furos</h4>
-                <span class="tag-card">Alvenaria</span>
-                <span class="city">São Paulo</span>
-                <button class="btn-modal">Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/porcelanato-42x42.png" alt="">
-                <h4>Porcelanato 42x42</h4>
-                <span class="tag-card">Revestimento</span>
-                <span class="city">Rio de Janeiro</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/fibrocimento-6mm.jpg" alt="">
-                <h4>Telha de Fibrocimento 6mm</h4>
-                <span class="tag-card">Alvenaria</span>
-                <span class="city">Curitiba</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Telhas Fibrocimento</h4>
-                <span class="tag-card">Telhado</span>
-                <span class="city">São Paulo</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Porcelanato 42x42</h4>
-                <span class="tag-card">revestimento</span>
-                <span class="city">Rio de Janeiro</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Tijolos 8 furos</h4>
-                <span class="tag-card">Alvenaria</span>
-                <span class="city">Curitiba</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Telhas Fibrocimento</h4>
-                <span class="tag-card">Telhado</span>
-                <span class="city">São Paulo</span>
-                <button>Ver Detalhes</button>
-            </div>
-            <div class="card">
-                <img src="./assets/img/tijolo_8_furos.webp" alt="">
-                <h4>Porcelanato 42x42</h4>
-                <span class="tag-card">revestimento</span>
-                <span class="city">Rio de Janeiro</span>
-                <button>Ver Detalhes</button>
+            </form>
+            <div class="d-flex flex-wrap gap-2 bg-white border rounded p-4 container">
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+               <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column gap-3 p-3" style="width: 15rem;">
+                    <img src="./assets/img/Fibrocimento.jpg" style="height: 12rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title" style="font-size: .8rem;">Telha Fibrocimento</h6>
+                        <p class="card-text text-truncate" style="font-size: .8rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi delectus commodi magni dolor laudantium libero, rem sed, sint culpa iure tempora fugiat eos reiciendis aliquid quibusdam odio, error distinctio sunt.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <span class="fs-4 fw-light">R$ 357,00</span>
+                        <h6 class="mt-2">Curitiba</h6>
+                        <a href="#" class="btn btn-link"  style="font-size: .9rem;">Ver detalhes</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -138,17 +243,20 @@
         &copy; Todos os direitos reservados!
     </footer>
     <script>
-        const modal = document.querySelector("#modal")
-        const btnModal = document.querySelector(".btn-modal")
-        const btnModalClose = document.querySelector(".btn-modal-close")
+        const getUser = localStorage.getItem('token');
+        if(getUser) {
+            const dataUser = JSON.parse(getUser);
 
-        btnModal.addEventListener('click', () => {
-            modal.style.display = 'flex'
-        })
+            const nameUser = document.getElementById('name-user')
+            nameUser.innerHTML = "<strong>" + dataUser.name + "</strong>"
+        } else {
+            window.location.href = 'login.html'
+        }
 
-        btnModalClose.addEventListener('click', () => {
-            modal.style.display = 'none'
-        })
+        function sair() {
+            localStorage.removeItem('token')
+            window.location.href = 'index.html'
+        }
     </script>
 </body>
 </html>
